@@ -1,0 +1,4 @@
+obj/*.o
+bin/run_md
+traj.xyz
+stdout.log

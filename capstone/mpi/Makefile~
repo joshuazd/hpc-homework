@@ -1,0 +1,12 @@
+SRC=$(wildcard *.cpp)
+OBJ=$(SRC:.cpp=.o)
+LIB=$(wildcard lib/*.cpp)
+LOBJ=$(LIB:.cpp=.o)
+CXX=mpicxx
+CXXFLAGS=-std=c++0x -Wall -O3 -fopenmp
+
+image_denoise : $(OBJ) $(LOBJ)
+	$(CXX) -o $@ -fopenmp $^
+
+clean:
+	rm *.o image_denoise
